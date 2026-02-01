@@ -25,7 +25,6 @@ export function Hero() {
                 className="relative z-10 max-w-[1200px] w-full flex flex-col items-center gap-10 md:gap-14"
             >
                 {/* --- HEADLINE AREA --- */}
-                {/* --- HEADLINE AREA --- */}
                 <div className="space-y-6 max-w-5xl">
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
