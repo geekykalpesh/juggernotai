@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Briefcase, Building2, Users2, Rocket, Code2, LineChart } from "lucide-react";
+import { Check, Briefcase, Code2, LineChart, Users2, Rocket, Building2 } from "lucide-react";
 
 const DESIGNED_FOR = [
     { text: "B2B SMEs with 10–200 employees", icon: Users2 },
