@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Zap, Share2, Mic2, Search, ArrowUpRight } from "lucide-react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 const OFFERINGS = [
     {
@@ -82,38 +83,47 @@ export function WhatWeOffer() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.05 }}
-                            className="bg-[#0A0A0A] p-6 md:p-8 group hover:bg-white/[0.02] transition-all duration-300 relative cursor-pointer"
+                            className="relative h-full"
                         >
-                            <div className="flex items-start justify-between mb-6">
-                                <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-emerald-500/30 transition-colors">
-                                    <offer.icon size={18} className="text-white group-hover:text-emerald-500 transition-colors" />
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-[9px] font-mono text-white/10 group-hover:text-white/30 transition-colors">{offer.code}</span>
-                                    <div className="w-6 h-6 rounded-full border border-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-emerald-500/10">
-                                        <ArrowUpRight size={12} className="text-emerald-500" />
+                            <CardSpotlight 
+                                className="group h-full bg-[#0A0A0A] border-none rounded-none p-6 md:p-8 hover:bg-[#0A0A0A] cursor-pointer"
+                                radius={200}
+                                color="#1a1a1a"
+                                revealColor={[[16, 185, 129], [6, 78, 59]]} // Emerald colors to match the theme
+                            >
+                                <div className="relative z-10">
+                                    <div className="flex items-start justify-between mb-6">
+                                        <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-emerald-500/30 transition-colors">
+                                            <offer.icon size={18} className="text-white group-hover:text-emerald-500 transition-colors" />
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[9px] font-mono text-white/10 group-hover:text-white/30 transition-colors">{offer.code}</span>
+                                            <div className="w-6 h-6 rounded-full border border-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-emerald-500/10">
+                                                <ArrowUpRight size={12} className="text-emerald-500" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h3 className="text-lg font-semibold text-white mb-2">{offer.title}</h3>
+                                    <p className="text-sm text-white/50 leading-relaxed mb-6">{offer.description}</p>
+
+                                    <div className="space-y-2">
+                                        {offer.features.map((feat, j) => (
+                                            <div key={j} className="flex items-center gap-2">
+                                                <div className="w-1 h-1 rounded-full bg-emerald-500/30 group-hover:bg-emerald-500 transition-colors" />
+                                                <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors">{feat}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Hover Indicator */}
+                                    <div className="mt-6 pt-4 border-t border-white/5 flex justify-end">
+                                        <span className="text-[9px] font-mono text-emerald-500/0 group-hover:text-emerald-500 transition-all duration-300 translate-y-2 group-hover:translate-y-0 uppercase tracking-widest">
+                                            View Service →
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <h3 className="text-lg font-semibold text-white mb-2">{offer.title}</h3>
-                            <p className="text-sm text-white/50 leading-relaxed mb-6">{offer.description}</p>
-
-                            <div className="space-y-2">
-                                {offer.features.map((feat, j) => (
-                                    <div key={j} className="flex items-center gap-2">
-                                        <div className="w-1 h-1 rounded-full bg-emerald-500/30 group-hover:bg-emerald-500 transition-colors" />
-                                        <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors">{feat}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Hover Indicator */}
-                            <div className="mt-6 pt-4 border-t border-white/5 flex justify-end">
-                                <span className="text-[9px] font-mono text-emerald-500/0 group-hover:text-emerald-500 transition-all duration-300 translate-y-2 group-hover:translate-y-0 uppercase tracking-widest">
-                                    View Service →
-                                </span>
-                            </div>
+                            </CardSpotlight>
                         </motion.div>
                     ))}
                 </div>

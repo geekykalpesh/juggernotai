@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Activity, Repeat, Signal, Network } from "lucide-react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 const REASONS = [
     {
@@ -82,40 +83,49 @@ export function WhyThisWorks() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.05 }}
-                            className="bg-[#0A0A0A] p-6 md:p-8 group hover:bg-white/[0.02] transition-all duration-300 relative overflow-hidden flex flex-col"
+                            className="relative h-full"
                         >
-                            {/* Decorative Background Icon */}
-                            <div className="absolute -top-4 -right-4 p-8 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
-                                <reason.icon size={80} strokeWidth={0.5} className="text-white" />
-                            </div>
-
-                            <div className="relative z-10 flex flex-col flex-1">
-                                <div className="flex items-start justify-between mb-6">
-                                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-blue-500/30 transition-colors">
-                                        <reason.icon size={16} className="text-white group-hover:text-blue-500 transition-colors" />
+                            <CardSpotlight 
+                                className="group h-full bg-[#0A0A0A] border-none rounded-none p-6 md:p-8 hover:bg-[#0A0A0A] cursor-pointer"
+                                radius={150}
+                                color="#0a0a1a"
+                                revealColor={[[59, 130, 246], [30, 58, 138]]} // Blue 500 & 900
+                            >
+                                <div className="relative z-10 flex flex-col h-full">
+                                    {/* Decorative Background Icon */}
+                                    <div className="absolute -top-4 -right-4 p-8 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
+                                        <reason.icon size={80} strokeWidth={0.5} className="text-white" />
                                     </div>
-                                    <span className="text-[9px] text-white/20 font-mono">{reason.code}</span>
-                                </div>
 
-                                <h3 className="text-lg font-semibold text-white mb-2">{reason.title}</h3>
-                                <div className="flex items-center gap-2 mb-4">
-                                    <div className="h-px w-3 bg-white/10" />
-                                    <span className="text-[8px] font-mono text-white/30 group-hover:text-blue-500/60 transition-colors tracking-wider">{reason.contrast}</span>
-                                </div>
+                                    <div className="relative z-10 flex flex-col flex-1">
+                                        <div className="flex items-start justify-between mb-6">
+                                            <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-blue-500/30 transition-colors">
+                                                <reason.icon size={16} className="text-white group-hover:text-blue-500 transition-colors" />
+                                            </div>
+                                            <span className="text-[9px] text-white/20 font-mono">{reason.code}</span>
+                                        </div>
 
-                                <p className="text-sm text-white/50 leading-relaxed flex-1">{reason.desc}</p>
+                                        <h3 className="text-lg font-semibold text-white mb-2">{reason.title}</h3>
+                                        <div className="flex items-center gap-2 mb-4">
+                                            <div className="h-px w-3 bg-white/10" />
+                                            <span className="text-[8px] font-mono text-white/30 group-hover:text-blue-500/60 transition-colors tracking-wider">{reason.contrast}</span>
+                                        </div>
 
-                                <div className="pt-4 mt-4 border-t border-white/5">
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-[8px] font-mono text-white/10 group-hover:text-white/30 transition-colors">VERIFIED</span>
-                                        <div className="flex gap-1">
-                                            {[1, 2, 3].map(dot => (
-                                                <div key={dot} className="w-1 h-1 rounded-full bg-white/5 group-hover:bg-blue-500/30 transition-colors" />
-                                            ))}
+                                        <p className="text-sm text-white/50 leading-relaxed flex-1">{reason.desc}</p>
+
+                                        <div className="pt-4 mt-4 border-t border-white/5">
+                                            <div className="flex items-center justify-between">
+                                                <span className="text-[8px] font-mono text-white/10 group-hover:text-white/30 transition-colors">VERIFIED</span>
+                                                <div className="flex gap-1">
+                                                    {[1, 2, 3].map(dot => (
+                                                        <div key={dot} className="w-1 h-1 rounded-full bg-white/5 group-hover:bg-blue-500/30 transition-colors" />
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </CardSpotlight>
                         </motion.div>
                     ))}
                 </div>

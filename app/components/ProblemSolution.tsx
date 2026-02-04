@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AlertCircle, Activity, Layers, Terminal, Database, ShieldAlert } from "lucide-react";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 
 export function ProblemSolution() {
     return (
@@ -80,19 +81,28 @@ export function ProblemSolution() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.05 }}
-                            className="bg-[#0A0A0A] p-6 md:p-8 group hover:bg-white/[0.03] transition-all duration-300 relative overflow-hidden cursor-pointer border border-transparent hover:border-red-500/10"
+                            className="relative h-full"
                         >
-                            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                                <item.icon size={60} strokeWidth={0.5} className="text-red-500" />
-                            </div>
-                            <div className="flex items-start justify-between mb-6 relative z-10">
-                                <div className="p-1.5 rounded-lg bg-red-500/5 border border-red-500/20 group-hover:bg-red-500/10 transition-colors duration-300">
-                                    <item.icon size={16} className="text-red-500" />
+                            <CardSpotlight 
+                                className="group h-full bg-[#0A0A0A] border-none rounded-none p-6 md:p-8 hover:bg-[#0A0A0A] cursor-pointer"
+                                radius={200}
+                                color="#1a0a0a"
+                                revealColor={[[239, 68, 68], [127, 29, 29]]} // Red 500 & 900
+                            >
+                                <div className="relative z-10">
+                                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                                        <item.icon size={60} strokeWidth={0.5} className="text-red-500" />
+                                    </div>
+                                    <div className="flex items-start justify-between mb-6">
+                                        <div className="p-1.5 rounded-lg bg-red-500/5 border border-red-500/20 group-hover:bg-red-500/10 transition-colors duration-300">
+                                            <item.icon size={16} className="text-red-500" />
+                                        </div>
+                                        <span className="text-[9px] font-mono text-white/10 group-hover:text-white/30 transition-colors">{item.code}</span>
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-red-100 transition-colors duration-300">{item.title}</h3>
+                                    <p className="text-sm text-white/50 leading-relaxed group-hover:text-white/60 transition-colors duration-300">{item.desc}</p>
                                 </div>
-                                <span className="text-[9px] font-mono text-white/10 group-hover:text-white/30 transition-colors">{item.code}</span>
-                            </div>
-                            <h3 className="text-lg font-semibold text-white mb-2 relative z-10 group-hover:text-red-100 transition-colors duration-300">{item.title}</h3>
-                            <p className="text-sm text-white/50 leading-relaxed relative z-10 group-hover:text-white/60 transition-colors duration-300">{item.desc}</p>
+                            </CardSpotlight>
                         </motion.div>
                     ))}
                 </div>

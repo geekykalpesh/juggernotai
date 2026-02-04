@@ -23,16 +23,19 @@ import {
 const CustomNode = ({ data }: { data: any }) => {
   const Icon = data.icon;
   return (
-    <div className={`px-4 py-3 rounded-lg bg-[#0F0F0F] border border-white/10 shadow-2xl min-w-[180px] relative group hover:border-white/30 transition-all flex items-center gap-4`}>
+    <div className={cn(
+      "px-3 py-2 md:px-4 md:py-3 rounded-lg bg-[#0F0F0F] border border-white/10 shadow-2xl relative group hover:border-white/30 transition-all flex items-center gap-2 md:gap-4",
+      "min-w-[140px] md:min-w-[180px]"
+    )}>
       {!data.hideTarget && <Handle type="target" position={Position.Left} className="!bg-white/20 !border-none !w-1.5 !h-1.5 !-left-1" />}
       
-      <div className={`p-2 rounded-xl bg-white/5 ${data.color} shrink-0`}>
-        <Icon size={18} />
+      <div className={`p-1.5 md:p-2 rounded-xl bg-white/5 ${data.color} shrink-0`}>
+        <Icon size={16} className="md:w-[18px] md:h-[18px]" />
       </div>
       
       <div className="flex flex-col min-w-0">
-        <span className="text-white text-xs font-medium truncate">{data.label}</span>
-        {data.sublabel && <span className="text-[8px] text-white/30 font-mono italic uppercase tracking-widest truncate">{data.sublabel}</span>}
+        <span className="text-white text-[10px] md:text-xs font-medium truncate">{data.label}</span>
+        {data.sublabel && <span className="text-[7px] md:text-[8px] text-white/30 font-mono italic uppercase tracking-widest truncate">{data.sublabel}</span>}
       </div>
 
       {!data.hideSource && <Handle type="source" position={Position.Right} className="!bg-white/20 !border-none !w-1.5 !h-1.5 !-right-1" />}
@@ -92,30 +95,30 @@ const GET_NODES_FOR_TYPE = (type: string, color: string): FlowNode[] => {
     case 'foundation':
       return [
         { id: '1', type: 'custom', position: { x: 0, y: 100 }, data: { label: 'Inputs Collected', icon: Webhook, color, sublabel: 'DATA_INGEST', hideTarget: true } },
-        { id: '2', type: 'custom', position: { x: 250, y: 100 }, data: { label: 'Define & Map', icon: Target, color, sublabel: 'STRAT_LAYER' } },
-        { id: '3', type: 'custom', position: { x: 500, y: 50 }, data: { label: 'Connect Systems', icon: Network, color, sublabel: 'INTEGRATION', hideSource: true } },
-        { id: '4', type: 'custom', position: { x: 500, y: 150 }, data: { label: 'Create Hubs', icon: Layers, color, sublabel: 'SYNC_CENTER', hideSource: true } },
+        { id: '2', type: 'custom', position: { x: 200, y: 100 }, data: { label: 'Define & Map', icon: Target, color, sublabel: 'STRAT_LAYER' } },
+        { id: '3', type: 'custom', position: { x: 400, y: 50 }, data: { label: 'Connect Systems', icon: Network, color, sublabel: 'INTEGRATION', hideSource: true } },
+        { id: '4', type: 'custom', position: { x: 400, y: 150 }, data: { label: 'Create Hubs', icon: Layers, color, sublabel: 'SYNC_CENTER', hideSource: true } },
       ];
     case 'launch':
       return [
         { id: '1', type: 'custom', position: { x: 0, y: 100 }, data: { label: 'Campaign Start', icon: Zap, color, sublabel: 'SYS_BOOT', hideTarget: true } },
-        { id: '2', type: 'custom', position: { x: 250, y: 0 }, data: { label: 'ContentIQ', icon: Share2, color, sublabel: 'DIST_CH' } },
-        { id: '3', type: 'custom', position: { x: 250, y: 100 }, data: { label: 'ABM Ads', icon: ArrowRight, color, sublabel: 'PAID_SYS' } },
-        { id: '4', type: 'custom', position: { x: 250, y: 200 }, data: { label: 'Outbound', icon: MessageSquare, color, sublabel: 'DIRECT_CH' } },
-        { id: '5', type: 'custom', position: { x: 500, y: 100 }, data: { label: 'Market Insights', icon: Activity, color, sublabel: 'ANALYTIC', hideSource: true } },
+        { id: '2', type: 'custom', position: { x: 200, y: 0 }, data: { label: 'ContentIQ', icon: Share2, color, sublabel: 'DIST_CH' } },
+        { id: '3', type: 'custom', position: { x: 200, y: 100 }, data: { label: 'ABM Ads', icon: ArrowRight, color, sublabel: 'PAID_SYS' } },
+        { id: '4', type: 'custom', position: { x: 200, y: 200 }, data: { label: 'Outbound', icon: MessageSquare, color, sublabel: 'DIRECT_CH' } },
+        { id: '5', type: 'custom', position: { x: 400, y: 100 }, data: { label: 'Market Insights', icon: Activity, color, sublabel: 'ANALYTIC', hideSource: true } },
       ];
     case 'amplify':
       return [
         { id: '1', type: 'custom', position: { x: 0, y: 100 }, data: { label: 'Engagement', icon: Activity, color, sublabel: 'SIG_IN', hideTarget: true } },
-        { id: '2', type: 'custom', position: { x: 250, y: 100 }, data: { label: 'Signal Enrich', icon: Cpu, color, sublabel: 'AI_PROC' } },
-        { id: '3', type: 'custom', position: { x: 500, y: 50 }, data: { label: 'Warm Triggers', icon: Zap, color, sublabel: 'EXEC_LAYER', hideSource: true } },
-        { id: '4', type: 'custom', position: { x: 500, y: 150 }, data: { label: 'Pipeline Sync', icon: BarChart3, color, sublabel: 'CRM_WRT', hideSource: true } },
+        { id: '2', type: 'custom', position: { x: 200, y: 100 }, data: { label: 'Signal Enrich', icon: Cpu, color, sublabel: 'AI_PROC' } },
+        { id: '3', type: 'custom', position: { x: 400, y: 50 }, data: { label: 'Warm Triggers', icon: Zap, color, sublabel: 'EXEC_LAYER', hideSource: true } },
+        { id: '4', type: 'custom', position: { x: 400, y: 150 }, data: { label: 'Pipeline Sync', icon: BarChart3, color, sublabel: 'CRM_WRT', hideSource: true } },
       ];
     case 'mastery':
       return [
         { id: '1', type: 'custom', position: { x: 0, y: 100 }, data: { label: 'CRM Enrichment', icon: GitMerge, color, sublabel: 'DATA_CLN', hideTarget: true } },
-        { id: '2', type: 'custom', position: { x: 250, y: 100 }, data: { label: 'Lead Priority', icon: ArrowRight, color, sublabel: 'ROUTE_SYS' } },
-        { id: '3', type: 'custom', position: { x: 500, y: 100 }, data: { label: 'Sales Ready', icon: Target, color, sublabel: 'SALES_RDY', hideSource: true } },
+        { id: '2', type: 'custom', position: { x: 200, y: 100 }, data: { label: 'Lead Priority', icon: ArrowRight, color, sublabel: 'ROUTE_SYS' } },
+        { id: '3', type: 'custom', position: { x: 400, y: 100 }, data: { label: 'Sales Ready', icon: Target, color, sublabel: 'SALES_RDY', hideSource: true } },
       ];
     default:
       return [];
@@ -167,6 +170,10 @@ export default function FlowDiagram({ type, color }: { type: string, color: stri
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         fitView
+        fitViewOptions={{ padding: 0.2 }}
+        onInit={(instance) => {
+          setTimeout(() => instance.fitView(), 100);
+        }}
         panOnScroll={false}
         zoomOnScroll={false}
         zoomOnPinch={false}
