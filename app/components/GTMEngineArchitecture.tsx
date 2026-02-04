@@ -116,20 +116,20 @@ function StickyCard({ step, index, total }: { step: any, index: number, total: n
         >
             <motion.div 
                 style={{ scale, opacity }}
-                className="w-full max-w-7xl h-[85vh] md:h-[70vh] bg-[#0A0A0A] border border-white/10 rounded-lg overflow-hidden flex flex-col md:grid md:grid-cols-2 shadow-[0_-20px_100px_rgba(0,0,0,0.5)]"
+                className="w-full max-w-7xl h-[90vh] md:h-[70vh] bg-[#0A0A0A] border border-white/10 rounded-lg overflow-hidden flex flex-col md:grid md:grid-cols-2 shadow-[0_-20px_100px_rgba(0,0,0,0.5)]"
             >
                 {/* --- LEFT SIDE: CONTENT --- */}
                 <div className="p-8 md:p-16 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5 relative shrink-0">
                     <div className={`absolute top-0 left-0 w-full h-full ${step.bgGlow} blur-[100px] pointer-events-none`} />
                     
                     <div className="relative z-10">
-                        <div className={`text-[10px] font-mono ${step.color} uppercase tracking-[0.3em] mb-4 md:mb-6`}>
+                        <div className={`text-xs font-mono ${step.color} uppercase tracking-[0.3em] mb-4 md:mb-6`}>
                             PHASE 0{index + 1}
                         </div>
-                        <h3 className="text-2xl md:text-display-3 text-text-primary mb-4 md:mb-6 leading-tight">
+                        <h3 className="text-3xl md:text-display-3 text-text-primary mb-4 md:mb-6 leading-tight">
                             {step.title}
                         </h3>
-                        <p className="text-sm md:text-body text-text-secondary mb-6 md:mb-10 leading-relaxed max-w-md">
+                        <p className="text-base md:text-body text-text-secondary mb-6 md:mb-10 leading-relaxed max-w-md">
                             {step.desc}
                         </p>
                         
@@ -137,7 +137,7 @@ function StickyCard({ step, index, total }: { step: any, index: number, total: n
                             {step.items.map((item: string, idx: number) => (
                                 <div key={idx} className="flex items-center gap-3">
                                     <div className={`w-1 h-1 rounded-full ${step.color.replace('text-', 'bg-')}`} />
-                                    <span className="text-[10px] md:text-ui-xs text-text-tertiary">{item}</span>
+                                    <span className="text-xs md:text-ui-xs text-text-tertiary">{item}</span>
                                 </div>
                             ))}
                         </div>
