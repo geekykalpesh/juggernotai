@@ -272,13 +272,14 @@ export const NavbarButton = ({
         pink: "bg-brand-pink text-brand-bg shadow-lg shadow-brand-pink/20 glow-pink hover:brightness-110",
     };
 
+    const Component = Tag as any;
     return (
-        <Tag
+        <Component
             href={href || undefined}
             className={cn(baseStyles, variantStyles[variant], className)}
             {...props}
         >
             {children}
-        </Tag>
+        </Component>
     );
 };

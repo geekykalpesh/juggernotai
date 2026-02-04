@@ -15,7 +15,7 @@ const FADE_UP_VARIANTS = {
         filter: "blur(0px)",
         transition: { 
             duration: 1.2, 
-            ease: [0.22, 1, 0.36, 1] // Custom refined bezier
+            ease: [0.22, 1, 0.36, 1] as const 
         }
     }
 };
