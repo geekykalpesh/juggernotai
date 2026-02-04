@@ -2,15 +2,16 @@
 
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { TargetAudience } from "./components/TargetAudience";
-import { ProblemSolution } from "./components/ProblemSolution";
+import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-import { GTMEngineArchitecture } from "./components/GTMEngineArchitecture";
-import { WhatWeOffer } from "./components/WhatWeOffer";
-import { WhyThisWorks } from "./components/WhyThisWorks";
-import { Footer } from "./components/Footer";
+const TargetAudience = dynamic(() => import("./components/TargetAudience").then(mod => mod.TargetAudience));
+const ProblemSolution = dynamic(() => import("./components/ProblemSolution").then(mod => mod.ProblemSolution));
+const GTMEngineArchitecture = dynamic(() => import("./components/GTMEngineArchitecture").then(mod => mod.GTMEngineArchitecture));
+const WhatWeOffer = dynamic(() => import("./components/WhatWeOffer").then(mod => mod.WhatWeOffer));
+const WhyThisWorks = dynamic(() => import("./components/WhyThisWorks").then(mod => mod.WhyThisWorks));
+const Footer = dynamic(() => import("./components/Footer").then(mod => mod.Footer));
 
 export default function Home() {
     return (
@@ -33,6 +34,8 @@ export default function Home() {
                         <div className="absolute inset-0 [background-size:32px_32px] [background-image:radial-gradient(rgba(236,72,153,0.1)_1px,transparent_1px)]" />
                         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
                     </div>
+                    {/* Cinematic Glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-pink/10 rounded-full blur-[100px] pointer-events-none" />
                     
                     <div className="max-w-7xl mx-auto px-6 relative z-10">
                         <div className="max-w-4xl mx-auto">
@@ -59,7 +62,7 @@ export default function Home() {
                                     <Button 
                                         variant="primary" 
                                         size="lg" 
-                                        className="bg-brand-pink text-black hover:bg-brand-pink/90 shadow-xl shadow-brand-pink/20 hover:scale-105 transition-all"
+                                        className="bg-brand-pink text-black hover:bg-brand-pink/90 shadow-xl shadow-brand-pink/20 hover:scale-105 transition-all duration-300 cursor-pointer"
                                     >
                                         Book a GTM Strategy Call
                                     </Button>

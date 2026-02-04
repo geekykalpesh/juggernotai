@@ -61,7 +61,7 @@ export function Hero() {
     };
 
     return (
-        <section ref={containerRef} className="relative min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-brand-bg px-6 text-center perspective-1000">
+        <section ref={containerRef} className="relative min-h-[100dvh] flex flex-col justify-center items-center overflow-x-hidden bg-brand-bg px-6 text-center perspective-1000 pt-24 pb-8 lg:py-0">
             
             {/* --- PREMIUM DASHED GRID BACKGROUND --- */}
             <div className="absolute inset-0 z-0">
@@ -73,10 +73,10 @@ export function Hero() {
                 initial="hidden"
                 animate="visible"
                 variants={STAGGER_CONTAINER}
-                className="relative z-10 max-w-[1200px] w-full flex flex-col items-center gap-10 md:gap-14"
+                className="relative z-10 max-w-[1200px] w-full flex flex-col items-center gap-4 lg:gap-14"
             >
                 {/* --- HEADLINE AREA --- */}
-                <div className="space-y-8 max-w-5xl flex flex-col items-center">
+                <div className="space-y-4 lg:space-y-8 max-w-6xl flex flex-col items-center">
                     {/* Badge */}
                     <motion.div 
                         variants={FADE_UP_VARIANTS}
@@ -94,9 +94,9 @@ export function Hero() {
                     {/* Main Title */}
                     <motion.h1 
                         variants={FADE_UP_VARIANTS}
-                        className="text-display-1 text-text-primary tracking-tight leading-[1.05]"
+                        className="text-4xl min-[400px]:text-5xl sm:text-6xl lg:text-[5rem] xl:text-[6.5rem] text-text-primary tracking-tight leading-[1.1] sm:leading-[1.0] text-balance"
                     >
-                        Build the Ultimate <br className="hidden md:block"/>
+                        Build the Ultimate <br className="hidden lg:block"/>
                         <span className="bg-gradient-to-br from-white via-white/90 to-white/40 bg-clip-text text-transparent inline-block">
                              Distribution System.
                         </span>
@@ -106,27 +106,27 @@ export function Hero() {
                 {/* --- VALUE PROPOSITION (De-cluttered) --- */}
                 <motion.div 
                      variants={FADE_UP_VARIANTS}
-                     className="grid md:grid-cols-2 gap-8 md:gap-20 text-left max-w-4xl border-t border-brand-border/40 pt-8 mt-4 relative"
+                     className="grid lg:grid-cols-2 gap-4 lg:gap-20 text-left max-w-4xl border-t border-brand-border/40 pt-4 lg:pt-8 mt-2 lg:mt-4 relative"
                 >
                     {/* Subtle divider gradient */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
                     <div>
-                        <h3 className="text-heading-3 text-text-primary mb-3 flex items-center gap-2">
+                        <h3 className="text-heading-3 text-text-primary mb-2 flex items-center gap-2">
                             <span className="w-1 h-3 bg-red-500/80 rounded-full" />
                             The Gap
                         </h3>
-                        <p className="text-body text-text-secondary leading-relaxed opacity-80">
+                        <p className="text-body-sm sm:text-body text-text-secondary leading-relaxed opacity-80">
                             Go-to-market is hard, slow, and expensive — especially when marketing doesn’t compound. Scattered efforts lead to unpredictable results.
                         </p>
                     </div>
 
                     <div>
-                        <h3 className="text-heading-3 text-text-primary mb-3 flex items-center gap-2">
+                        <h3 className="text-heading-3 text-text-primary mb-2 flex items-center gap-2">
                              <span className="w-1 h-3 bg-emerald-500/80 rounded-full" />
                             The Engine
                         </h3>
-                        <p className="text-body text-text-secondary leading-relaxed opacity-80">
+                        <p className="text-body-sm sm:text-body text-text-secondary leading-relaxed opacity-80">
                             We turn manual work into a <span className="text-text-primary font-medium border-b border-dashed border-white/20">systematic engine</span>. From no real pipeline to predictable inbound demand.
                         </p>
                     </div>
@@ -135,7 +135,7 @@ export function Hero() {
                 {/* --- CTA ACTION AREA --- */}
                 <motion.div 
                     variants={FADE_UP_VARIANTS}
-                    className="flex flex-col sm:flex-row items-center gap-6 mt-6 perspective-500"
+                    className="flex flex-col sm:flex-row items-center gap-3 lg:gap-6 mt-2 lg:mt-6 perspective-500"
                 >
                     {/* Magnetic Button Wrapper */}
                     <motion.button 
@@ -144,7 +144,7 @@ export function Hero() {
                         onMouseLeave={handleMouseLeave}
                         style={{ x: mouseXSpring, y: mouseYSpring }}
                         whileTap={{ scale: 0.95 }}
-                        className="group relative flex items-center justify-between gap-6 pl-8 pr-2 py-2 bg-brand-pink rounded-full text-brand-bg cursor-pointer shadow-[0_0_30px_-10px_rgba(236,72,153,0.4)] overflow-hidden"
+                        className="group relative flex items-center justify-between gap-6 pl-8 pr-2 py-3 bg-brand-pink rounded-full text-brand-bg cursor-pointer shadow-[0_0_30px_-10px_rgba(236,72,153,0.4)] overflow-hidden min-h-[44px]"
                     >
                         {/* Shimmer Effect */}
                         <motion.div 
@@ -162,7 +162,7 @@ export function Hero() {
                     
                     <motion.button 
                         whileHover={{ x: 5 }}
-                        className="flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-white transition-colors group"
+                        className="flex items-center gap-3 text-sm font-medium text-text-secondary hover:text-white transition-colors group min-h-[44px]"
                     >
                         <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
                              <PlayCircle size={18} className="text-white/60 group-hover:text-white transition-colors" />

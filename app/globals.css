@@ -106,8 +106,8 @@
   h1,
   .text-display-1 {
     @apply font-space-grotesk font-bold tracking-[-0.04em] leading-[0.9];
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    /* 48px - 104px */
+    font-size: clamp(4rem, 15vw, 13rem);
+    /* 64px - 208px */
   }
 
   h2,
@@ -277,6 +277,16 @@
   }
 
   /* === LAYOUT UTILITIES === */
+  .grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--spacing-6);
+  }
+  
+  .full-height-dynamic {
+    height: 100dvh;
+  }
+
   .max-w-content {
     max-width: 65ch;
     /* Optimal reading width */

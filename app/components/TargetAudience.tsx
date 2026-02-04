@@ -6,6 +6,32 @@ import { Users2, Briefcase, LineChart, ShieldCheck, Zap, Globe } from "lucide-re
 import { Cover } from "@/components/ui/cover";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 
+const AUDIENCE_SEGMENTS = [
+    {
+        icon: Users2,
+        label: "B2B SMEs",
+        desc: "10–200 employees scaling operational capacity",
+        badge: { icon: ShieldCheck, text: "Verified", color: "text-emerald-500" },
+        revealColor: [[16, 185, 129], [6, 78, 59]] // Emerald 500 & 900
+    },
+    {
+        icon: Briefcase,
+        label: "Founder & Sales-Led",
+        desc: "Transitioning to systematic distribution",
+        badge: { icon: Zap, text: "System Ready", color: "text-amber-500" },
+        revealColor: [[245, 158, 11], [146, 64, 14]] // Amber 500 & 900
+    },
+    {
+        icon: LineChart,
+        label: "High-ACV Model",
+        desc: "Proven PMF with high-ticket products",
+        badge: { icon: Globe, text: "Global Scale", color: "text-blue-500" },
+        revealColor: [[59, 130, 246], [30, 58, 138]] // Blue 500 & 900
+    }
+];
+
+const VERTICALS = ["B2B SaaS", "Agencies & Consultancies", "IT Services & Dev Shops", "Professional Services"];
+
 export function TargetAudience() {
     return (
         <section className="relative bg-[#000000] py-8 md:py-12 overflow-hidden border-t border-white/5">
@@ -48,30 +74,8 @@ export function TargetAudience() {
                 </div>
 
                 {/* Compact 3-Column Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-lg overflow-hidden mb-12">
-                    {[
-                        {
-                            icon: Users2,
-                            label: "B2B SMEs",
-                            desc: "10–200 employees scaling operational capacity",
-                            badge: { icon: ShieldCheck, text: "Verified", color: "text-emerald-500" },
-                            revealColor: [[16, 185, 129], [6, 78, 59]] // Emerald 500 & 900
-                        },
-                        {
-                            icon: Briefcase,
-                            label: "Founder & Sales-Led",
-                            desc: "Transitioning to systematic distribution",
-                            badge: { icon: Zap, text: "System Ready", color: "text-amber-500" },
-                            revealColor: [[245, 158, 11], [146, 64, 14]] // Amber 500 & 900
-                        },
-                        {
-                            icon: LineChart,
-                            label: "High-ACV Model",
-                            desc: "Proven PMF with high-ticket products",
-                            badge: { icon: Globe, text: "Global Scale", color: "text-blue-500" },
-                            revealColor: [[59, 130, 246], [30, 58, 138]] // Blue 500 & 900
-                        }
-                    ].map((item, i) => (
+                <div className="grid-auto-fit bg-white/5 border border-white/5 rounded-lg overflow-hidden mb-12">
+                    {AUDIENCE_SEGMENTS.map((item, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +84,7 @@ export function TargetAudience() {
                             className="relative h-full"
                         >
                             <CardSpotlight 
-                                className="group h-full bg-[#0A0A0A] border-none rounded-none p-6 md:p-8 hover:bg-[#0A0A0A]"
+                                className="group h-full bg-[#0A0A0A] border-none rounded-none p-6 md:p-8 hover:bg-[#0A0A0A] cursor-pointer"
                                 radius={200}
                                 color="#1a1a1a"
                                 revealColor={item.revealColor}
@@ -130,7 +134,7 @@ export function TargetAudience() {
                             <div className="text-[9px] font-mono text-emerald-500/50 tracking-[0.2em] uppercase">Verticals</div>
                         </div>
                         <div className="space-y-2">
-                            {["B2B SaaS", "Agencies & Consultancies", "IT Services & Dev Shops", "Professional Services"].map((text, i) => (
+                            {VERTICALS.map((text, i) => (
                                 <div key={i} className="flex items-center gap-2">
                                     <div className="w-1 h-1 rounded-full bg-emerald-500/50" />
                                     <span className="text-sm text-white/50">{text}</span>
