@@ -53,7 +53,7 @@ export function ICPMapping() {
                                 We specialize in distribution architecture for companies that have found market fit but lack system leverage.
                             </p>
 
-                            <div className="flex border border-white/5 rounded-2xl overflow-hidden bg-white/[0.01]">
+                            <div className="flex border border-white/5 rounded-lg overflow-hidden bg-white/[0.01]">
                                 <div className="p-4 border-r border-white/5 flex flex-col items-center">
                                     <span className="text-lg font-bold text-white">100%</span>
                                     <span className="text-[8px] uppercase tracking-widest text-white/20">B2B Focus</span>
@@ -87,7 +87,7 @@ export function ICPMapping() {
                                     {category.items.map((item, i) => (
                                         <div
                                             key={i}
-                                            className="group relative flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] hover:border-white/10 transition-all duration-300"
+                                            className="group relative flex items-center justify-between p-6 rounded-lg border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] hover:border-white/10 transition-all duration-300"
                                         >
                                             <div className="flex items-center gap-5 relative z-10">
                                                 <div className="w-2 h-2 rounded-full bg-white/10 group-hover:bg-white group-hover:scale-125 transition-all duration-500" />

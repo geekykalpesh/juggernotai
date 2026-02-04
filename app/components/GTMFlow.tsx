@@ -92,7 +92,7 @@ export function GTMFlow() {
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
     return (
-        <div style={{ width: '100%', height: '400px' }} className="mt-12 rounded-2xl border border-brand-border/30 overflow-hidden bg-brand-bg/50 backdrop-blur-sm">
+        <div style={{ width: '100%', height: '400px' }} className="mt-12 rounded-lg border border-brand-border/30 overflow-hidden bg-brand-bg/50 backdrop-blur-sm">
             <ReactFlow
                 nodes={nodes}
                 edges={edges}

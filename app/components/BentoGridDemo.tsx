@@ -46,7 +46,7 @@ const LeadGenerationAnimation = () => (
                 transition={{ duration: 0.6, delay: 0.1 }}
             >
                 <motion.div
-                    className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
+                    className="w-16 h-16 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center"
                     whileHover={{ scale: 1.1, borderColor: "rgba(255,255,255,0.2)" }}
                     transition={{ duration: 0.3 }}
                 >
@@ -56,7 +56,7 @@ const LeadGenerationAnimation = () => (
 
                 {/* Pulse Effect */}
                 <motion.div
-                    className="absolute inset-0 rounded-2xl border-2 border-white/20"
+                    className="absolute inset-0 rounded-lg border-2 border-white/20"
                     initial={{ scale: 1, opacity: 0.5 }}
                     animate={{ scale: 1.5, opacity: 0 }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
@@ -86,7 +86,7 @@ const LeadGenerationAnimation = () => (
                 transition={{ duration: 0.6, delay: 0.2 }}
             >
                 <motion.div
-                    className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
+                    className="w-16 h-16 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center"
                     whileHover={{ scale: 1.1, borderColor: "rgba(255,255,255,0.2)" }}
                     transition={{ duration: 0.3 }}
                 >
@@ -120,7 +120,7 @@ const LeadGenerationAnimation = () => (
                 transition={{ duration: 0.6, delay: 0.3 }}
             >
                 <motion.div
-                    className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
+                    className="w-16 h-16 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center"
                     whileHover={{ scale: 1.1, borderColor: "rgba(255,255,255,0.2)" }}
                     transition={{ duration: 0.3 }}
                 >
@@ -236,7 +236,7 @@ const ScaleEngineAnimation = () => (
                 transition={{ duration: 0.8, type: "spring", bounce: 0.5 }}
             >
                 <motion.div
-                    className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm"
+                    className="w-16 h-16 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm"
                     whileHover={{ scale: 1.1, borderColor: "rgba(255,255,255,0.3)" }}
                     animate={{
                         boxShadow: [
@@ -256,7 +256,7 @@ const ScaleEngineAnimation = () => (
                 {[0, 1, 2].map((index) => (
                     <motion.div
                         key={index}
-                        className="absolute inset-0 rounded-2xl border-2 border-white/20"
+                        className="absolute inset-0 rounded-lg border-2 border-white/20"
                         animate={{
                             scale: [1, 1.5, 1.5],
                             opacity: [0.5, 0, 0],

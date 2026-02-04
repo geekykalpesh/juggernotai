@@ -4,14 +4,12 @@ import Link from "next/link";
 
 export function Footer() {
     return (
-        <footer className="py-20 border-t border-brand-border mt-20">
-            <div className="max-w-7xl mx-auto px-6">
+        <footer className="py-20 border-t border-brand-border mt-20 bg-brand-bg relative overflow-hidden">
+            <div className="absolute inset-0 noise opacity-[0.03] pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
                     <div className="col-span-2">
                         <div className="flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 rounded-lg bg-brand-pink flex items-center justify-center font-space-grotesk font-bold text-brand-bg">
-                                J
-                            </div>
                             <span className="text-xl font-space-grotesk font-bold tracking-tight">
                                 JUGGERNOT<span className="text-brand-pink">AI</span>
                             </span>

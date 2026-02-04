@@ -20,12 +20,12 @@ export function Transformation() {
     ];
 
     return (
-        <section ref={containerRef} className="relative min-h-screen flex flex-col justify-center items-center bg-[#050608] px-6 text-center overflow-hidden">
+        <section ref={containerRef} className="relative min-h-screen flex flex-col justify-center items-center bg-brand-bg px-6 py-24 md:py-32 text-center overflow-hidden">
             
-            {/* Subtle Gradient Backlight */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
+            {/* Subtle Gradient Backlight - Slightly muted red for 'problem' vibe */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-900/10 blur-[120px] rounded-full pointer-events-none mix-blend-screen" />
 
-            <div className="max-w-5xl relative z-10 flex flex-col items-center gap-16">
+            <div className="max-w-5xl relative z-10 flex flex-col items-center gap-16 md:gap-24">
                 
                 {/* HEADLINE BLOCK */}
                 <div className="space-y-8">
@@ -35,11 +35,11 @@ export function Transformation() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                         <h2 className="text-display-1 text-white mb-6">
+                         <h2 className="text-display-1 text-text-primary mb-6">
                             The Real Problem <br />
-                            <span className="text-white/30">Isn’t Marketing.</span>
+                            <span className="text-text-secondary opacity-50">Isn’t Marketing.</span>
                         </h2>
-                        <p className="text-heading-1 text-white/80">
+                        <p className="text-heading-1 text-red-500/90 font-medium tracking-wide">
                             It’s Distribution.
                         </p>
                     </motion.div>
@@ -49,7 +49,7 @@ export function Transformation() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 1 }}
-                        className="w-px h-16 bg-gradient-to-b from-white/20 to-transparent mx-auto"
+                        className="w-px h-24 bg-gradient-to-b from-brand-border to-transparent mx-auto"
                     />
 
                     <motion.p 
@@ -57,10 +57,10 @@ export function Transformation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4, duration: 0.8 }}
-                        className="text-body-lg text-white/50 max-w-xl mx-auto"
+                        className="text-body-lg text-text-secondary max-w-xl mx-auto leading-relaxed"
                     >
                         Most companies don’t lack effort. <br />
-                        <span className="text-white">They lack a system.</span>
+                        <span className="text-text-primary font-semibold border-b border-brand-pink/30 pb-1">They lack a system.</span>
                     </motion.p>
                 </div>
 
@@ -70,7 +70,7 @@ export function Transformation() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-label text-white/20 mb-4 text-center"
+                        className="text-label-sm text-text-tertiary mb-6 text-center uppercase tracking-[0.2em]"
                     >
                         What we see repeatedly
                     </motion.div>
@@ -82,10 +82,12 @@ export function Transformation() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: i * 0.1, duration: 0.6 }}
-                            className="group flex items-center gap-6 p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
+                            className="group flex items-center gap-6 p-6 rounded-lg border border-brand-border/40 bg-brand-surface/30 hover:bg-brand-surface/60 transition-all duration-300 hover:scale-[1.01] hover:border-red-500/20 hover:shadow-lg hover:shadow-red-900/5 cursor-default"
                         >
-                            <XCircle className="w-6 h-6 text-red-500/50 group-hover:text-red-500 transition-colors shrink-0" />
-                            <span className="text-body-lg text-white/60 group-hover:text-white transition-colors">
+                            <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 group-hover:bg-red-500/20 transition-colors">
+                                <XCircle className="w-5 h-5 text-red-500/70 group-hover:text-red-500 transition-colors" />
+                            </div>
+                            <span className="text-body text-text-secondary group-hover:text-text-primary transition-colors font-medium">
                                 {item}
                             </span>
                         </motion.div>
